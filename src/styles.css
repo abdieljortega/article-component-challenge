@@ -65,7 +65,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 11px);
+  padding: 50px 0;
   background-color: var(--color-light-grayish-blue);
   font-family: var(--body-font);
 }
@@ -90,6 +90,7 @@ article {
 
 .info {
   padding: 40px;
+  position: relative;
 }
 
 article h1 {
@@ -100,7 +101,7 @@ article h1 {
   margin-bottom: 20px;
 }
 
-article .body {
+.body {
   margin-bottom: 20px;
   color: var(--color-desaturated-dark-blue);
   font-size: 13px;
@@ -133,21 +134,21 @@ article .body {
   color: var(--color-grayish-blue);
 }
 
-.shareButton {
-  width: 15px;
-  height: 15px;
-  border-radius: 50px;
-  position: relative;
-  background-color: var(--color-light-grayish-blue);
-  padding: 10px;
+.shareContainer {
   float: right;
+  position: relative;
 }
 
 .share {
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  padding: 10px;
+  background-color: var(--color-light-grayish-blue);
   cursor: pointer;
 }
 
-.shareButton-active {
+.share-active {
   background-color: var(--color-desaturated-dark-blue);
 }
 
@@ -157,11 +158,10 @@ article .body {
   border-radius: 6px;
   background-color: var(--color-very-dark-grayish-blue);
   position: absolute;
-  z-index: 1;
-  bottom: 165%;
-  left: 50%;
-  text-align: center;
   transform: translate(-50%, 0);
+  left: 50%;
+  z-index: 1;
+  text-align: center;
   letter-spacing: 4px;
   text-transform: uppercase;
   font-size: 13px;
@@ -194,3 +194,60 @@ article .body {
   color: hsl(228, 45%, 44%);
 }
 
+@media screen and (max-width: 426px) {
+  article {
+    flex-flow: column;
+    width: 90vw;
+    box-sizing: border-box;
+  }
+
+  .imgContainer img {
+    border-radius: 15px 15px 0 0;
+  }
+
+  .info {
+    padding-bottom: 20px;
+  }
+
+  .body {
+    margin-bottom: 40px;
+  }
+
+  .shareContainer {
+    position: initial;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .user-name {
+    margin-bottom: 10px;
+  }
+
+  .share {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    z-index: 2;
+  }
+
+  .tooltiptext {
+    align-items: center;
+    height: 80px;
+    min-width: 90vw;
+    max-width: 90vw;
+    border-radius: 0 0 15px 15px;
+    padding: 15px 40px;
+    bottom: 0;
+    left: 50%;
+    box-sizing: border-box;
+    transform: translate(-50%, 0);
+  }
+
+  .tooltiptext::after {
+    display: none;
+  }
+}
