@@ -65,6 +65,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: calc(100vh - 111px);
   padding: 50px 0;
   background-color: var(--color-light-grayish-blue);
   font-family: var(--body-font);
